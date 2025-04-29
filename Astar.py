@@ -1,7 +1,7 @@
 import heapq
 def a_star_algorithm(graph, heuristics, start, goal):
     open_list = []
-    heapq.heappush(open_list, (0 + heuristics[start], 0, start, [start]))  # (f, g, current, path)
+    heapq.heappush(open_list, (0 + heuristics[start], 0, start, [start]))  # (f(estimated), g(total), current, path)
     visited = set()
 
     while open_list:
@@ -42,3 +42,24 @@ start = input("Enter start node: ")
 goal = input("Enter goal node: ")
 
 a_star_algorithm(graph, heuristics, start, goal)
+
+
+# Enter number of edges: 6
+# Enter edges in the format 'u v cost' (e.g., A B 4):
+# A B 1
+# A C 4
+# B D 2
+# C D 5
+# B E 3
+# D E 1
+
+# Enter heuristic (estimated cost to goal) for each node:
+# Heuristic for A: 7
+# Heuristic for B: 6
+# Heuristic for C: 5
+# Heuristic for D: 3
+# Heuristic for E: 0
+
+# Enter start node: A
+# Enter goal node: E
+
